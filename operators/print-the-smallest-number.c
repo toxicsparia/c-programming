@@ -24,5 +24,8 @@ int main() {
     x = a < b;
     y = b <= a;
     printf("The smallest number is: %.2f \n", a*x+b*y);
+    /*
+    a*y+b*x this mathematical change will print the biggest number remain the every step same.
+    */
 return 0;
 }
