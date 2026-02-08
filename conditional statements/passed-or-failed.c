@@ -4,7 +4,7 @@ int main(void) {
     int marks;
     printf("Enter your marks (0-100): \n");
     if (scanf("%d", &marks) != 1) {
-        printf("Invalid input: expected an integer.\n");
+        printf("Invalid input\n");
         return 1;
     }
 
