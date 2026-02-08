@@ -5,7 +5,7 @@ int main(void){
     int tm;
     printf("Enter your total number [1 - 100]\n");
     if (scanf("%d", &tm) != 1){
-        printf("invalid input");
+        printf("invalid input \n");
         return 1;
     }
 if (tm < 0 || tm > 100){
