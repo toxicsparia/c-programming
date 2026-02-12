@@ -1,5 +1,10 @@
 #include<stdio.h>
-
+/*
+Triangle Validity
+o Take three sides of a triangle as input
+o Check if they can form a valid triangle (sum of any two sides > third side)
+o Also determine the type: equilateral, isosceles, or scalene
+*/
 int main(){
     float a, b, c;
     printf("Enter the 'a' value \n");
