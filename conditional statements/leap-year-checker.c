@@ -1,4 +1,9 @@
 #include <stdio.h>
+/*
+Leap Year Checker
+o Take a year as input and determine if it's a leap year
+o A year is a leap year if: divisible by 400 OR (divisible by 4 AND not divisible by 100)
+*/
 
 int main() {
     int year;
