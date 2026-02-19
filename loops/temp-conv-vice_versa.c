@@ -4,20 +4,28 @@
 int main(){
     int num;
     float temp;
+    while(1){
     printf("Enter 1 for Celsius to Fahrenheit.\n");
     printf("Enter 2 for Fahrenheit to Celsius.\n");
     if(scanf("%d", &num) != 1){
         printf("Invalid Input\n");
-        return 1;
+        while(getchar() != '\n');
+        continue;
     }
     if(num<1 || num>2){
         printf("Please enter a valid input (1 or 2)\n");
-        return 1;
+        continue;
     }
+    break;
+}
+    while(1){
     printf("Enter tempreture\n");
     if(scanf("%f", &temp) != 1){
         printf("Invalid input\n");
-        return 1;
+        while(getchar() != '\n');
+        continue;
+     }
+        break;
     }
     if(num==1){
         printf("%.2f Celsius = %.2f Fahrenheit\n", temp, temp*9/5+32);
