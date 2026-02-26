@@ -1,13 +1,13 @@
-// Factorial of n
+// Factorial of n;
 #include <stdio.h>
 
-// Function declaration (prototype)
+//declaration/prototype;
 int factorial(int n);
 
-// Function definition
+//definition;
 int factorial(int n){
     //THE BASE CASE: The stopping condition. 
-    //Without this, the function would call itself forever and crash.
+    //without this, the function would call itself forever and crash.
     if(n == 0){
         return 1;
     }
