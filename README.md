@@ -1,4 +1,4 @@
-# BCA C Programming Practice
+# C Programming Practice
 
 This repository contains my C programming practice codes
 as part of my BCA.
@@ -11,7 +11,7 @@ as part of my BCA.
 ## Tools Used
 - Language: C
 - Compiler: GCC
-- OS: Windows 11
+- OS: Kali Linux
 - Editor: VS Code
 
 ## Note
