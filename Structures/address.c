@@ -2,92 +2,56 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct address {
+typedef struct address { // creating a struct
     char house_no[10];
     char block[30];
     char city[25];
     char state[20];
 }add;
 
-add info(int n);
+add info(int n); //creating a funciton for inputing the informations
+void print_info(add *ptr, int n); // creating a function for printing the informations
 
 int main(){
-    add p1 = info(1);
-    add p2 = info(2);
-    add p3 = info(3);
-    add p4 = info(4);
-    add p5 = info(5);
-    printf("\n");
-    printf("The information of people 1\n");
-    printf("House number: %s\n", p1.house_no);
-    printf("Block: ");
-    puts(p1.block);
-    printf("city: ");
-    puts(p1.city);
-    printf("State: ");
-    puts(p1.state);
-    printf("\n");
-    printf("The information of people 2\n");
-    printf("House number: %s\n", p2.house_no);
-    printf("Block: ");
-    puts(p2.block);
-    printf("City: ");
-    puts(p2.city);
-    printf("State: ");
-    puts(p2.state);
-    printf("\n");
-    printf("The information of people 3\n");
-    printf("House number: %s\n", p3.house_no);
-    printf("Block: ");
-    puts(p3.block);
-    printf("city: ");
-    puts(p3.city);
-    printf("State: ");
-    puts(p3.state);
-    printf("\n");
-    printf("The information of people 4\n");
-    printf("House number: %s\n", p4.house_no);
-    printf("Block: ");
-    puts(p4.block);
-    printf("city: ");
-    puts(p4.city);
-    printf("State: ");
-    puts(p4.state);
-    printf("\n");
-    printf("The information of people 5\n");
-    printf("House number: %s\n", p5.house_no);
-    printf("Block: ");
-    puts(p5.block);
-    printf("city: ");
-    puts(p5.city);
-    printf("State: ");
-    puts(p5.state);
-    printf("\n");
+    //calling the function and storing them into a new struct variable....
+    add a = info(1);
+    add b = info(2);
+    add c = info(3);
+    add d = info(4);
+    add e = info(5);
+    // calling the printing function and passing the argumants using address pinters.
+    print_info(&a, 1);
+    print_info(&b, 2);
+    print_info(&c, 3);
+    print_info(&d, 4);
+    print_info(&e, 5);
     return 0;
 }
 
-add info(int n){
-    add x;
+add info(int n){ //declaring the input function
+    add x; // creating a variable x with our self made data type/struct.
     printf("Enter the info of number %d people\n", n);
-    while(1){
+    while(1){ // creating a infinite loop for preventing from wrong inputs...
     printf("Enter House no: ");
-    if(scanf("%s", x.house_no) != 1){
+    if(scanf("%s", x.house_no) != 1){ // house_no. is a string value so we are using %s...
         printf("Please enter a valid house no.\n");
-        while(getchar() != '\n');
-        continue;
+        while(getchar() != '\n'); // clearing the input buffer
+        continue;// retry if wrong
     }
-    while(getchar() != '\n');
-    break;
+    while(getchar() != '\n'); //also clearing the buffer if true ..
+    break; // break the loop
     }
     while(1){
         printf("Enter block: ");
-        if(fgets(x.block, 30, stdin) == NULL){
+        if(fgets(x.block, 30, stdin) == NULL){ //using fgets cause block can contain multiple words... and %s just input's one word.. 
             printf("Invalid input please try again\n");
             continue;
         }
-        x.block[strcspn(x.block, "\n")] = '\0';
-        break;
+        x.block[strcspn(x.block, "\n")] = '\0'; //cutting the extra line using string complement span / strcspn - 
+        // it's searching for '\n' into x.block and replacing the value with '\0'
+        break; // break the loop;
     }
+    // doing same with rest of them
     while(1){
         printf("Enter city: ");
         if(fgets(x.city, 25, stdin) == NULL){
@@ -106,5 +70,20 @@ add info(int n){
         x.state[strcspn(x.state, "\n")] = '\0';
         break;
     }
-    return x;
+    return x; // returning the whole struct variable 'x'
+}
+
+void print_info(add *ptr, int n){// declaring the printing function and taking the argumants with pointers...
+    printf("\n");
+    printf("The information of people %d\n", n);
+    printf("House number: %s", (*ptr).house_no); //  instead of this we can also use ptr->house)no (replace of dot operator)
+    printf("\n");
+    printf("Block: ");
+    puts((*ptr).block);
+    printf("city: ");
+    puts((*ptr).city);
+    printf("State: ");
+    puts((*ptr).state);
+    printf("\n");
+    return;
 }
